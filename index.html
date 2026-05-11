@@ -1,1 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Primary Meta Tags -->
+  <title>Saif | saif_devs — Professional Web Developer Pakistan | Restaurant Websites</title>
+  <meta name="description" content="Professional freelance web developer in Faisalabad, Pakistan. Specializing in restaurant websites, business websites, and custom web development. Fast delivery, mobile-first, SEO optimized.">
+  <meta name="keywords" content="web developer Pakistan, restaurant website Pakistan, web designer Faisalabad, freelance web developer, saif_devs, website development Pakistan">
+  <meta name="author" content="Saif — saif_devs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://saif-devs.vercel.app">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237c3aed'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://saif-devs.vercel.app">
+  <meta property="og:title" content="Saif | saif_devs — Web Developer Pakistan">
+  <meta property="og:description" content="Professional freelance web developer specializing in restaurant websites. Based in Faisalabad, Pakistan.">
+  <meta property="og:image" content="https://saif-devs.vercel.app/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saif | saif_devs — Web Developer Pakistan">
+  <meta name="twitter:description" content="Restaurant websites & custom web development. Faisalabad, Pakistan.">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Saif",
+    "jobTitle": "Freelance Web Developer",
+    "url": "https://saif-devs.vercel.app",
+    "sameAs": [
+      "https://instagram.com/saif_devs",
+      "https://linktr.ee/saif_devs"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Faisalabad",
+      "addressCountry": "PK"
+    },
+    "telephone": "+923097171127"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══ CSS CUSTOM PROPERTIES ═══ */
+    :root {
+      --bg: #0a0a14;
+      --surface: #1a1a2e;
+      --card: #16213e;
+      --primary: #7c3aed;
+      --secondary: #a855f7;
+      --tertiary: #c084fc;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --gradient: linear-gradient(135deg, #7c3aed, #a855f7, #c084fc);
+      --gradient-soft: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(168,85,247,0.08));
+      --border: rgba(124,58,237,0.2);
+      --border-hover: rgba(168,85,247,0.5);
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
+      --shadow-glow: 0 0 40px rgba(124,58,237,0.3);
+      --radius: 16px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    [data-theme="light"] {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --card: #f3f4f6;
+      --primary: #7c3aed;
+      --secondary: #6d28d9;
+      --tertiary: #8b5cf6;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --gradient: linear-gradient(135deg, #7c3aed, #a855f7);
+      --gradient-soft: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(168,85,247,0.04));
+      --border: rgba(124,58,237,0.15);
+      --border-hover: rgba(109,40,217,0.4);
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-glow: 0 0 40px rgba(124,58,237,0.15);
+    }
+
+    /* ═══ RESET & BASE ═══ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ═══ CUSTOM CURSOR ═══ */
+    .cursor {
+      width: 12px; height: 12px;
+      background: var(--primary);
+      border-radius: 50%;
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s, width 0.2s, height 0.2s, opacity 0.2s;
+      mix-blend-mode: screen;
+    }
+    .cursor-ring {
+      width: 36px; height: 36px;
+      border: 1.5px solid rgba(168,85,247,0.5);
+      border-radius: 50%;
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease-out, width 0.2s, height 0.2s, opacity 0.2s;
+    }
+    @media (hover: none) { .cursor, .cursor-ring { display: none; } }
+
+    /* ═══ SCROLL REVEAL ═══ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ═══ UTILITY ═══ */
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--secondary);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .section-title .glow-word {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 520px;
+    }
+    .section-header { margin-bottom: 56px; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 100px 0; }
+
+    .glass-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+    .glass-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-4px);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary {
+      background: var(--gradient);
+      color: #fff;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.5s;
+    }
+    .btn-primary:hover::after { left: 150%; }
+    .btn-primary:hover { box-shadow: 0 8px 30px rgba(124,58,237,0.5); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1.5px solid var(--border-hover);
+      color: var(--text);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--gradient-soft);
+      border-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #fff;
+    }
+    .btn-whatsapp:hover { box-shadow: 0 8px 24px rgba(37,211,102,0.4); transform: translateY(-2px); }
+
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: rgba(124,58,237,0.12);
+      border: 1px solid rgba(124,58,237,0.25);
+      color: var(--secondary);
+    }
+
+    /* ═══ NAVBAR ═══ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 24px;
+      transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
+    }
+    #navbar.scrolled {
+      background: rgba(10,10,20,0.85);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    [data-theme="light"] #navbar.scrolled {
+      background: rgba(250,250,250,0.85);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .nav-logo .bracket { color: var(--secondary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gradient);
+      border-radius: 2px;
+      transition: width var(--transition);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .theme-toggle {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+      background: var(--gradient-soft);
+    }
+    .theme-toggle:hover { border-color: var(--secondary); color: var(--secondary); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 36px;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transform: translateY(-110%);
+      transition: transform var(--transition);
+      z-index: 999;
+      visibility: hidden;
+    }
+    .mobile-menu.open { transform: translateY(0); visibility: visible; }
+    .mobile-menu a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:hover { color: var(--secondary); }
+
+    /* ═══ HERO SECTION ═══ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0 80px;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-mesh {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 30%, rgba(124,58,237,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 80% 60%, rgba(168,85,247,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 60% 10%, rgba(192,132,252,0.12) 0%, transparent 60%);
+      animation: meshShift 12s ease-in-out infinite alternate;
+    }
+    @keyframes meshShift {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0.7; transform: scale(1.08); }
+    }
+    .hero-noise {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      background-size: 200px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* Floating shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.06;
+      animation: floatShape 20s ease-in-out infinite;
+    }
+    .shape-1 { width: 300px; height: 300px; background: var(--primary); top: -80px; right: 10%; animation-delay: 0s; }
+    .shape-2 { width: 150px; height: 150px; background: var(--secondary); bottom: 15%; left: 5%; border-radius: 30%; animation-delay: -7s; }
+    .shape-3 { width: 80px; height: 80px; background: var(--tertiary); top: 40%; right: 20%; border-radius: 20%; animation-delay: -14s; }
+    @keyframes floatShape {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(20px, -30px) rotate(120deg); }
+      66% { transform: translate(-15px, 20px) rotate(240deg); }
+    }
+
+    /* Social sidebar */
+    .social-sidebar {
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      z-index: 2;
+    }
+    .social-sidebar::before, .social-sidebar::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: var(--border);
+    }
+    .social-link {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--text-muted);
+      transition: all var(--transition);
+      background: var(--gradient-soft);
+    }
+    .social-link:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+      transform: scale(1.1);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: rgba(124,58,237,0.12);
+      border: 1px solid rgba(124,58,237,0.3);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--secondary);
+      margin-bottom: 28px;
+      animation: fadeSlideUp 0.8s ease both;
+    }
+    .pulse-dot {
+      width: 8px; height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+      50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+    }
+
+    .hero-eyebrow {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      animation: fadeSlideUp 0.8s ease 0.1s both;
+    }
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 10vw, 7rem);
+      font-weight: 800;
+      line-height: 0.95;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+      animation: fadeSlideUp 0.8s ease 0.2s both;
+    }
+    .hero-typewriter-wrap {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 24px;
+      min-height: 2.5rem;
+      animation: fadeSlideUp 0.8s ease 0.3s both;
+    }
+    #typewriter {
+      color: var(--secondary);
+      border-right: 2px solid var(--secondary);
+      padding-right: 4px;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink { 50% { border-color: transparent; } }
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 540px;
+      margin-bottom: 36px;
+      animation: fadeSlideUp 0.8s ease 0.4s both;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeSlideUp 0.8s ease 0.5s both;
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      animation: fadeSlideUp 1s ease 0.8s both;
+    }
+    .scroll-arrow {
+      width: 24px; height: 24px;
+      border-right: 2px solid var(--text-muted);
+      border-bottom: 2px solid var(--text-muted);
+      transform: rotate(45deg);
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(45deg) translateY(6px); }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ═══ ABOUT SECTION ═══ */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .avatar-wrap {
+      position: relative;
+      aspect-ratio: 1;
+      max-width: 380px;
+    }
+    .avatar-border {
+      position: absolute;
+      inset: -3px;
+      border-radius: 24px;
+      background: conic-gradient(from 0deg, var(--primary), var(--secondary), var(--tertiary), var(--primary));
+      animation: spin 8s linear infinite;
+      z-index: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: 22px;
+      background: var(--card);
+      overflow: hidden;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      margin: 3px;
+    }
+    .avatar-brackets {
+      font-family: var(--font-mono);
+      font-size: 5rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .avatar-watermark {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .about-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .fact-item {
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: var(--gradient-soft);
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .about-text p { color: var(--text-muted); margin-bottom: 16px; line-height: 1.8; }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 72px;
+    }
+    .stat-card {
+      padding: 28px 20px;
+      text-align: center;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--gradient-soft);
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ═══ SERVICES SECTION ═══ */
+    #services { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      padding: 32px 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--card);
+      position: relative;
+      transition: all var(--transition);
+    }
+    .service-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-6px);
+    }
+    .service-badge {
+      position: absolute;
+      top: -12px; left: 24px;
+      background: var(--gradient);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+    .service-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .service-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
+    .service-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+    .service-link { font-size: 0.85rem; font-weight: 600; color: var(--secondary); display: inline-flex; align-items: center; gap: 6px; }
+    .service-link:hover { gap: 10px; }
+
+    /* ═══ PROJECTS SECTION ═══ */
+    #projects { background: var(--surface); }
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      background: transparent;
+      transition: all var(--transition);
+    }
+    .filter-tab.active, .filter-tab:hover {
+      background: var(--gradient);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .project-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--card);
+      transition: all var(--transition);
+      position: relative;
+    }
+    .project-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-6px) scale(1.01);
+    }
+    .project-thumb {
+      height: 200px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .project-thumb-content {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      padding: 20px;
+      line-height: 1.2;
+    }
+    .project-thumb-sub {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 6px;
+    }
+    .project-badge {
+      position: absolute;
+      top: 16px; left: 16px;
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .badge-amber { background: rgba(245,158,11,0.2); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
+    .badge-rose { background: rgba(244,63,94,0.2); color: #f43f5e; border: 1px solid rgba(244,63,94,0.3); }
+    .badge-teal { background: rgba(20,184,166,0.2); color: #14b8a6; border: 1px solid rgba(20,184,166,0.3); }
+    .project-body { padding: 24px; }
+    .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .project-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .project-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+    .project-tech { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .tech-pill {
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      background: rgba(124,58,237,0.12);
+      color: var(--tertiary);
+      border: 1px solid rgba(124,58,237,0.2);
+    }
+    .project-links { display: flex; gap: 12px; }
+
+    .projects-cta {
+      text-align: center;
+      margin-top: 64px;
+      padding: 48px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--gradient-soft);
+    }
+    .projects-cta p { color: var(--text-muted); margin-bottom: 20px; font-size: 1.1rem; }
+
+    /* ═══ WHY CHOOSE ME ═══ */
+    #why { background: var(--bg); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .why-card {
+      padding: 32px 24px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: all var(--transition);
+      text-align: left;
+    }
+    .why-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-6px);
+    }
+    .why-icon { font-size: 2rem; margin-bottom: 20px; }
+    .why-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .why-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ═══ CONTACT SECTION ═══ */
+    #contact { background: var(--surface); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+    }
+    .contact-heading { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+    .contact-sub { color: var(--text-muted); margin-bottom: 32px; font-size: 0.95rem; }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      margin-bottom: 14px;
+      transition: all var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .contact-card:hover { border-color: var(--border-hover); transform: translateX(4px); }
+    .contact-card-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .contact-card-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2px; }
+    .contact-card-value { font-weight: 600; font-size: 0.95rem; }
+    .contact-card-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+    .map-wrap {
+      margin-top: 28px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    /* Contact Form */
+    .form-group { margin-bottom: 18px; }
+    .form-label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 6px; color: var(--text-muted); }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: border-color var(--transition);
+      outline: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--secondary); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-success {
+      display: none;
+      padding: 14px 18px;
+      border-radius: 10px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: #22c55e;
+      font-weight: 500;
+      margin-top: 12px;
+    }
+
+    /* ═══ FOOTER ═══ */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-logo { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
+    .footer-tagline { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-heading { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; color: var(--text-muted); }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { font-size: 0.9rem; color: var(--text-muted); transition: color var(--transition); }
+    .footer-links a:hover { color: var(--secondary); }
+    .footer-bar {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-copy { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Back to top */
+    #back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: var(--gradient);
+      color: #fff;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 500;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all var(--transition);
+      box-shadow: 0 4px 20px rgba(124,58,237,0.4);
+    }
+    #back-to-top.visible { opacity: 1; transform: translateY(0); }
+    #back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(124,58,237,0.5); }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 1023px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 767px) {
+      section { padding: 70px 0; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-grid { gap: 40px; }
+      .avatar-wrap { max-width: 280px; margin: 0 auto; }
+      .services-grid, .projects-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .nav-links, .nav-right .btn { display: none; }
+      .hamburger { display: flex; }
+      .social-sidebar { display: none; }
+      .hero-name { font-size: clamp(3rem, 14vw, 5rem); }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bar { flex-direction: column; text-align: center; }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .form-row { grid-template-columns: 1fr; }
+      .filter-tabs { gap: 6px; }
+    }
+    @media (max-width: 400px) {
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- Back to Top -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <span class="bracket">&lt;</span> saif_devs <span class="bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+      <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 22px;font-size:0.85rem;">Hire Me ↗</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+  <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+  <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="btn btn-whatsapp" style="text-align:center;">💬 Hire Me on WhatsApp</a>
+</div>
+
+<!-- ═══ HERO SECTION ═══ -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-mesh"></div>
+    <div class="hero-noise"></div>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="social-sidebar">
+    <a href="https://instagram.com/saif_devs" target="_blank" rel="noopener" class="social-link" title="Instagram">📸</a>
+    <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="social-link" title="WhatsApp">💬</a>
+    <a href="https://linktr.ee/saif_devs" target="_blank" rel="noopener" class="social-link" title="Linktree">🌿</a>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        ✦ Available for Projects
+      </div>
+      <p class="hero-eyebrow">Hi, I'm</p>
+      <h1 class="hero-name">Saif</h1>
+      <div class="hero-typewriter-wrap">
+        I build <span id="typewriter"></span>
+      </div>
+      <p class="hero-desc">
+        Professional freelance web developer specializing in restaurant websites and custom digital solutions. Based in Faisalabad, Pakistan 🇵🇰
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View My Work ↓</a>
+        <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="btn btn-outline">💬 Let's Talk</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT SECTION ═══ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="avatar-wrap">
+          <div class="avatar-border"></div>
+          <div class="avatar-inner">
+            <div class="avatar-brackets">{ }</div>
+            <div class="avatar-watermark">saif_devs</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-label reveal">&lt; About Me /&gt;</span>
+        <h2 class="section-title reveal reveal-delay-1">Crafting Digital <span class="glow-word">Experiences</span></h2>
+        <p class="reveal reveal-delay-2">I'm Saif — a professional freelance web developer from Faisalabad, Pakistan. I specialize in building fast, modern, and conversion-focused websites for restaurants and businesses.</p>
+        <p class="reveal reveal-delay-2">With expertise in HTML, CSS, JavaScript, PHP, and modern frameworks, I deliver complete digital solutions from design to deployment.</p>
+        <div class="about-facts reveal reveal-delay-3">
+          <div class="fact-item">🚀 3+ Projects Completed</div>
+          <div class="fact-item">⭐ 100% Client Satisfaction</div>
+          <div class="fact-item">⚡ 7-Day Delivery</div>
+          <div class="fact-item">🌍 Working Worldwide</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card reveal">
+        <div class="stat-num" data-target="20">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-num" data-target="20">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-num" data-target="10">0</div>
+        <div class="stat-label">Technologies</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <div class="stat-num" data-target="24" data-suffix="h">0</div>
+        <div class="stat-label">Hour Response Time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES SECTION ═══ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">&lt; Services /&gt;</span>
+      <h2 class="section-title reveal reveal-delay-1">What I <span class="glow-word">Offer</span></h2>
+      <p class="section-sub reveal reveal-delay-2">End-to-end web solutions tailored to grow your business online.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-badge">Most Popular</div>
+        <div class="service-icon">🍽️</div>
+        <div class="service-title">Restaurant Websites</div>
+        <p class="service-desc">Complete restaurant digital presence. Menu pages, online ordering, reservations, Google Maps integration, and mobile-first design.</p>
+        <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🏢</div>
+        <div class="service-title">Business Websites</div>
+        <p class="service-desc">Professional business websites that generate leads, build trust, and convert visitors into customers.</p>
+        <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🛒</div>
+        <div class="service-title">eCommerce Stores</div>
+        <p class="service-desc">Full online stores with product management, payment integration, and order tracking.</p>
+        <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">📄</div>
+        <div class="service-title">Landing Pages</div>
+        <p class="service-desc">High-converting single-page campaigns for offers, product launches, and events.</p>
+        <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🔍</div>
+        <div class="service-title">SEO Optimization</div>
+        <p class="service-desc">Get found on Google. On-page SEO, speed optimization, and local SEO for Pakistani businesses.</p>
+        <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="service-link">Get Started →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🔧</div>
+        <div class="service-title">Web Maintenance</div>
+        <p class="service-desc">Ongoing website updates, security patches, backups, and performance monitoring.</p>
+        <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="service-link">Get Started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROJECTS SECTION ═══ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">&lt; My Projects /&gt;</span>
+      <h2 class="section-title reveal reveal-delay-1">Latest <span class="glow-word">Projects</span></h2>
+      <p class="section-sub reveal reveal-delay-2">Our most recent work. Real websites built for real clients.</p>
+    </div>
+
+    <div class="filter-tabs reveal">
+      <button class="filter-tab active" onclick="filterProjects('all', this)">All</button>
+      <button class="filter-tab" onclick="filterProjects('restaurant', this)">Restaurant</button>
+      <button class="filter-tab" onclick="filterProjects('business', this)">Business</button>
+      <button class="filter-tab" onclick="filterProjects('concept', this)">Concept</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+      <!-- Project 1 -->
+      <div class="project-card" data-category="restaurant concept">
+        <div class="project-thumb" style="background: linear-gradient(135deg, #f97316, #ea580c, #9a3412);">
+          <div class="project-thumb-content">
+            Nando's
+            <div class="project-thumb-sub">🌶️ Peri-Peri Fiesta</div>
+          </div>
+          <span class="project-badge badge-amber">Concept Design</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">Restaurant</span>
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">Responsive</span>
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">UI/UX</span>
+          </div>
+          <div class="project-name">Nando's Website (Concept)</div>
+          <p class="project-desc">A bold, conversion-focused website concept for Nando's. Features peri-peri themed design with fiery orange colors, online ordering system, full menu page, and seamless mobile experience.</p>
+          <div class="project-tech">
+            <span class="tech-pill">HTML</span>
+            <span class="tech-pill">CSS</span>
+            <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">Responsive</span>
+          </div>
+          <div class="project-links">
+            <a href="https://nandos.com" target="_blank" rel="noopener" class="btn btn-primary" style="padding:9px 18px;font-size:0.82rem;">Live Demo ↗</a>
+            <a href="#" class="btn btn-outline" style="padding:9px 18px;font-size:0.82rem;">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card" data-category="restaurant concept">
+        <div class="project-thumb" style="background: linear-gradient(135deg, #7f1d1d, #b91c1c, #d4a017);">
+          <div class="project-thumb-content">
+            Haveli
+            <div class="project-thumb-sub">🏰 Mughal Heritage</div>
+          </div>
+          <span class="project-badge badge-rose">Concept Design</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">Restaurant</span>
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">Luxury</span>
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">Pakistani Brand</span>
+          </div>
+          <div class="project-name">Haveli Restaurant (Concept)</div>
+          <p class="project-desc">Premium website concept for Haveli Restaurant. Deep crimson and gold palette reflecting Mughal heritage. Features online table reservations, rich food gallery, and sophisticated typography.</p>
+          <div class="project-tech">
+            <span class="tech-pill">HTML</span>
+            <span class="tech-pill">CSS</span>
+            <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">PHP</span>
+          </div>
+          <div class="project-links">
+            <a href="https://haveli.com.pk" target="_blank" rel="noopener" class="btn btn-primary" style="padding:9px 18px;font-size:0.82rem;">Live Demo ↗</a>
+            <a href="#" class="btn btn-outline" style="padding:9px 18px;font-size:0.82rem;">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card" data-category="restaurant concept">
+        <div class="project-thumb" style="background: linear-gradient(135deg, #134e4a, #0f766e, #a7f3d0);">
+          <div class="project-thumb-content">
+            Café Aylanto
+            <div class="project-thumb-sub">🌿 Mediterranean</div>
+          </div>
+          <span class="project-badge badge-teal">Concept Design</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">Restaurant</span>
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">Mediterranean</span>
+            <span class="tag-pill" style="font-size:0.72rem;padding:3px 10px;">Minimal</span>
+          </div>
+          <div class="project-name">Cafe Aylanto (Concept)</div>
+          <p class="project-desc">Contemporary website concept for Cafe Aylanto. Sage green and cream palette with editorial-style food photography layout. Online ordering, specials section, and elegant contact page.</p>
+          <div class="project-tech">
+            <span class="tech-pill">HTML</span>
+            <span class="tech-pill">CSS</span>
+            <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">SEO</span>
+          </div>
+          <div class="project-links">
+            <a href="https://cafeaylanto.org" target="_blank" rel="noopener" class="btn btn-primary" style="padding:9px 18px;font-size:0.82rem;">Live Demo ↗</a>
+            <a href="#" class="btn btn-outline" style="padding:9px 18px;font-size:0.82rem;">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-cta reveal">
+      <p>Have a project in mind? Let's build it together.</p>
+      <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 Start Your Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE ME ═══ -->
+<section id="why">
+  <div class="container">
+    <div class="section-header" style="text-align:center;">
+      <span class="section-label reveal" style="display:block;">&lt; Why Choose Me /&gt;</span>
+      <h2 class="section-title reveal reveal-delay-1" style="margin:0 auto 16px;">Built Different, <span class="glow-word">Delivered Better</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">Lightning Fast</div>
+        <p class="why-desc">Every website I build scores 90+ on Google PageSpeed. Fast sites rank higher and convert better.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon">📱</div>
+        <div class="why-title">Mobile First</div>
+        <p class="why-desc">Designed for mobile from the ground up. 90% of your customers are on their phones.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon">🔍</div>
+        <div class="why-title">SEO Ready</div>
+        <p class="why-desc">Built-in SEO optimization so your business gets found on Google without paid ads.</p>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon">💬</div>
+        <div class="why-title">Direct Communication</div>
+        <p class="why-desc">Work directly with me — no middlemen, no agencies. Just results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT SECTION ═══ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label reveal">&lt; Let's Work Together /&gt;</span>
+      <h2 class="section-title reveal reveal-delay-1">Get In <span class="glow-word">Touch</span></h2>
+    </div>
+    <div class="contact-grid">
+      <!-- Left: Contact Info -->
+      <div>
+        <div class="contact-heading reveal">Ready to start your project?</div>
+        <p class="contact-sub reveal reveal-delay-1">Let's talk about your vision and build something amazing together.</p>
+
+        <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-1">
+          <div class="contact-card-icon">💬</div>
+          <div>
+            <div class="contact-card-label">WhatsApp</div>
+            <div class="contact-card-value">+92 309 7171127</div>
+            <div class="contact-card-sub">Usually replies within 1 hour</div>
+          </div>
+        </a>
+        <a href="https://instagram.com/saif_devs" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-2">
+          <div class="contact-card-icon">📸</div>
+          <div>
+            <div class="contact-card-label">Instagram</div>
+            <div class="contact-card-value">@saif_devs</div>
+            <div class="contact-card-sub">Follow my work</div>
+          </div>
+        </a>
+        <a href="https://linktr.ee/saif_devs" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-3">
+          <div class="contact-card-icon">🌿</div>
+          <div>
+            <div class="contact-card-label">Linktree</div>
+            <div class="contact-card-value">linktr.ee/saif_devs</div>
+            <div class="contact-card-sub">All links in one place</div>
+          </div>
+        </a>
+
+        <p class="reveal" style="margin-top:20px;color:var(--text-muted);font-size:0.9rem;">📍 Faisalabad, Punjab, Pakistan 🇵🇰</p>
+
+        <div class="map-wrap reveal" style="margin-top:20px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.2037890835036!2d73.0649188759615!3d31.436056174252624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922435e4a912221%3A0x3afd94794fca9308!2sSaifullah%20Anwar%20Full%20Stack%20Developer!5e0!3m2!1sen!2s!4v1778477251534!5m2!1sen!2s" width="100%" height="260" style="border:0;border-radius:12px;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="reveal reveal-delay-2">
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="fname">Your Name *</label>
+            <input class="form-input" id="fname" type="text" placeholder="Muhammad Ali" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="femail">Email *</label>
+              <input class="form-input" id="femail" type="email" placeholder="hello@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fphone">Phone / WhatsApp</label>
+              <input class="form-input" id="fphone" type="tel" placeholder="+92 300 0000000">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fservice">Service Needed</label>
+              <select class="form-select" id="fservice">
+                <option value="">Select a service</option>
+                <option>Restaurant Website</option>
+                <option>Business Website</option>
+                <option>eCommerce Store</option>
+                <option>Landing Page</option>
+                <option>SEO Optimization</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fbudget">Budget</label>
+              <select class="form-select" id="fbudget">
+                <option value="">Select budget</option>
+                <option>Under 15,000 PKR</option>
+                <option>15,000–30,000 PKR</option>
+                <option>30,000–50,000 PKR</option>
+                <option>50,000+ PKR</option>
+                <option>Let's Discuss</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fmessage">Message *</label>
+            <textarea class="form-textarea" id="fmessage" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;padding:14px;">
+            💬 Send Message via WhatsApp
+          </button>
+          <div class="form-success" id="formSuccess">Opening WhatsApp... 🚀 Your message is ready!</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span style="color:var(--secondary)">&lt;</span> saif_devs <span style="color:var(--secondary)">/&gt;</span>
+        </div>
+        <p class="footer-tagline">Building the web, one restaurant at a time. 🍽️</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/saif_devs" target="_blank" rel="noopener" class="social-link">📸</a>
+          <a href="https://wa.me/923097171127" target="_blank" rel="noopener" class="social-link">💬</a>
+          <a href="https://linktr.ee/saif_devs" target="_blank" rel="noopener" class="social-link">🌿</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <ul class="footer-links">
+          <li><a href="https://wa.me/923097171127" target="_blank" rel="noopener">+92 309 7171127</a></li>
+          <li><a href="mailto:saifullahanwar00040@gmail.com">saifullahanwar00040@gmail.com</a></li>
+          <li><span style="color:var(--text-muted)">Faisalabad, Pakistan 🇵🇰</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <p class="footer-copy">© 2025 saif_devs · Designed & Developed by Saif · Faisalabad, Pakistan 🇵🇰</p>
+      <p class="footer-copy" style="color:var(--secondary);">Made with ♥ in Pakistan</p>
+    </div>
+  </div>
+</footer>
+
+<!--
+═══════════════════════════════════════════════════════════
+VERCEL API ROUTE SETUP (Green API via environment variables)
+═══════════════════════════════════════════════════════════
+
+1. In your Vercel project dashboard → Settings → Environment Variables, add:
+   GREENAPI_INSTANCE_ID   = your instance ID from green-api.com
+   GREENAPI_API_TOKEN     = your API token from green-api.com
+   GREENAPI_WA_NUMBER     = 923097171127
+
+2. Create file: api/contact.js  (in your project root)
+   Paste the code below into that file.
+
+3. The form will POST JSON to /api/contact, which calls Green API.
+
+─── api/contact.js ────────────────────────────────────────
+export default async function handler(req, res) {
+  if (req.method !== 'POST') return res.status(405).end();
+
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Content-Type', 'application/json');
+
+  const { name, email, phone, service, budget, message } = req.body;
+
+  const instanceId = process.env.GREENAPI_INSTANCE_ID;
+  const apiToken   = process.env.GREENAPI_API_TOKEN;
+  const waNumber   = process.env.GREENAPI_WA_NUMBER || '923097171127';
+
+  const text = `*New Project Inquiry — saif_devs*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone || 'Not provided'}\n*Service:* ${service || 'Not specified'}\n*Budget:* ${budget || 'Not specified'}\n*Message:* ${message}`;
+
+  const url = `https://api.green-api.com/waInstance${instanceId}/sendMessage/${apiToken}`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chatId: `${waNumber}@c.us`, message: text })
+    });
+    const data = await response.json();
+    if (data.idMessage) {
+      return res.status(200).json({ success: true });
+    } else {
+      return res.status(500).json({ success: false, error: data });
+    }
+  } catch (err) {
+    return res.status(500).json({ success: false, error: err.message });
+  }
+}
+────────────────────────────────────────────────────────────
+-->
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+  // ── Custom Cursor ──
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  function animCursor() {
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animCursor);
+  }
+  animCursor();
+
+  // ── Theme Toggle ──
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('theme') || 'dark';
+  html.setAttribute('data-theme', saved);
+  themeToggle.textContent = saved === 'dark' ? '🌙' : '☀️';
+  themeToggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+  });
+
+  // ── Navbar Scroll ──
+  const navbar = document.getElementById('navbar');
+  const backTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    backTop.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+
+  // ── Mobile Menu ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  // ── Typewriter ──
+  const phrases = ['Restaurant Websites', 'Business Websites', 'eCommerce Stores', 'Custom Web Apps'];
+  let pi = 0, ci = 0, deleting = false;
+  const tw = document.getElementById('typewriter');
+  function typeIt() {
+    const phrase = phrases[pi];
+    tw.textContent = deleting ? phrase.slice(0, ci--) : phrase.slice(0, ci++);
+    if (!deleting && ci > phrase.length) { deleting = true; setTimeout(typeIt, 1200); return; }
+    if (deleting && ci < 0) { deleting = false; ci = 0; pi = (pi + 1) % phrases.length; }
+    setTimeout(typeIt, deleting ? 45 : 90);
+  }
+  typeIt();
+
+  // ── Intersection Observer for Reveal ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // ── Count-Up Stats ──
+  const statNums = document.querySelectorAll('.stat-num');
+  const countObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '+';
+        let cur = 0;
+        const step = () => {
+          cur = Math.min(cur + Math.ceil(target / 30), target);
+          el.textContent = cur + suffix;
+          if (cur < target) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        countObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  statNums.forEach(n => countObs.observe(n));
+
+  // ── Project Filter ──
+  function filterProjects(cat, btn) {
+    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.project-card').forEach(card => {
+      const cats = card.dataset.category || '';
+      card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+    });
+  }
+
+  // ── Contact Form ──
+  async function handleFormSubmit(e) {
+    e.preventDefault();
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
+    const service = document.getElementById('fservice').value;
+    const budget  = document.getElementById('fbudget').value;
+    const message = document.getElementById('fmessage').value.trim();
+    const pageUrl = window.location.href;
+
+    // Show loading state
+    const origText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '⏳ Sending...';
+    submitBtn.disabled = true;
+
+    const success = document.getElementById('formSuccess');
+
+    // Try Green API via PHP backend (Vercel PHP runtime)
+    try {
+      const res = await fetch('/api/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, service, budget, message, pageUrl })
+      });
+      const data = await res.json();
+      if (data.success) {
+        success.textContent = '✅ Message sent! I\'ll reply within 1 hour.';
+        success.style.display = 'block';
+        e.target.reset();
+        setTimeout(() => { success.style.display = 'none'; }, 5000);
+        submitBtn.innerHTML = origText;
+        submitBtn.disabled = false;
+        return;
+      }
+    } catch (_) {}
+
+    // Fallback: open WhatsApp directly with page URL included
+    const msg = `*New Project Inquiry — saif_devs*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone || 'Not provided'}\n*Service:* ${service || 'Not specified'}\n*Budget:* ${budget || 'Not specified'}\n*Message:* ${message}\n*Page:* ${pageUrl}`;
+    window.open(`https://wa.me/923097171127?text=${encodeURIComponent(msg)}`, '_blank');
+    success.textContent = 'Opening WhatsApp... 🚀';
+    success.style.display = 'block';
+    setTimeout(() => { success.style.display = 'none'; }, 4000);
+    submitBtn.innerHTML = origText;
+    submitBtn.disabled = false;
+  }
+</script>
+</body>
+</html>
