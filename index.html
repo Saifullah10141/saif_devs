@@ -1092,9 +1092,9 @@
         <p class="reveal reveal-delay-2">I'm Saif — a professional freelance web developer from Faisalabad, Pakistan. I specialize in building fast, modern, and conversion-focused websites for restaurants and businesses.</p>
         <p class="reveal reveal-delay-2">With expertise in HTML, CSS, JavaScript, PHP, and modern frameworks, I deliver complete digital solutions from design to deployment.</p>
         <div class="about-facts reveal reveal-delay-3">
-          <div class="fact-item">🚀 3+ Projects Completed</div>
+          <div class="fact-item">🚀 20+ Projects Completed</div>
           <div class="fact-item">⭐ 100% Client Satisfaction</div>
-          <div class="fact-item">⚡ 7-Day Delivery</div>
+          <div class="fact-item">⚡ 3-Day Delivery</div>
           <div class="fact-item">🌍 Working Worldwide</div>
         </div>
       </div>
@@ -1456,62 +1456,11 @@
       </div>
     </div>
     <div class="footer-bar">
-      <p class="footer-copy">© 2025 saif_devs · Designed & Developed by Saif · Faisalabad, Pakistan 🇵🇰</p>
+      <p class="footer-copy">© 2026 saif_devs · Designed & Developed by Saif · Faisalabad, Pakistan 🇵🇰</p>
       <p class="footer-copy" style="color:var(--secondary);">Made with ♥ in Pakistan</p>
     </div>
   </div>
 </footer>
-
-<!--
-═══════════════════════════════════════════════════════════
-VERCEL API ROUTE SETUP (Green API via environment variables)
-═══════════════════════════════════════════════════════════
-
-1. In your Vercel project dashboard → Settings → Environment Variables, add:
-   GREENAPI_INSTANCE_ID   = your instance ID from green-api.com
-   GREENAPI_API_TOKEN     = your API token from green-api.com
-   GREENAPI_WA_NUMBER     = 923097171127
-
-2. Create file: api/contact.js  (in your project root)
-   Paste the code below into that file.
-
-3. The form will POST JSON to /api/contact, which calls Green API.
-
-─── api/contact.js ────────────────────────────────────────
-export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end();
-
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Content-Type', 'application/json');
-
-  const { name, email, phone, service, budget, message } = req.body;
-
-  const instanceId = process.env.GREENAPI_INSTANCE_ID;
-  const apiToken   = process.env.GREENAPI_API_TOKEN;
-  const waNumber   = process.env.GREENAPI_WA_NUMBER || '923097171127';
-
-  const text = `*New Project Inquiry — saif_devs*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone || 'Not provided'}\n*Service:* ${service || 'Not specified'}\n*Budget:* ${budget || 'Not specified'}\n*Message:* ${message}`;
-
-  const url = `https://api.green-api.com/waInstance${instanceId}/sendMessage/${apiToken}`;
-
-  try {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chatId: `${waNumber}@c.us`, message: text })
-    });
-    const data = await response.json();
-    if (data.idMessage) {
-      return res.status(200).json({ success: true });
-    } else {
-      return res.status(500).json({ success: false, error: data });
-    }
-  } catch (err) {
-    return res.status(500).json({ success: false, error: err.message });
-  }
-}
-────────────────────────────────────────────────────────────
--->
 
 <!-- ═══ JAVASCRIPT ═══ -->
 <script>
