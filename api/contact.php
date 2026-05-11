@@ -1,11 +1,4 @@
 <?php
-// api/contact.php — API WhatsApp backend
-// Runs on Vercel via the vercel-community/php runtime (see vercel.json)
-//
-// Required Environment Variables (set in Vercel Dashboard → Settings → Environment Variables):
-//   API_INSTANCE_ID   → your instance ID  (e.g. 7105xxxxxxx)
-//   API_API_TOKEN     → your API token     (e.g. abcdef123456...)
-//   API_WA_NUMBER     → 923097171127       (no + sign)
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
@@ -73,7 +66,7 @@ if ($pageUrl) {
     $text .= "*Sent from:* {$pageUrl}";
 }
 
-// Call Green API
+// Call API
 $url     = "https://api.green-api.com/waInstance{$instanceId}/sendMessage/{$apiToken}";
 $payload = json_encode([
     'chatId'  => "{$waNumber}@c.us",
