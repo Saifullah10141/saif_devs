@@ -1,11 +1,11 @@
 <?php
-// api/contact.php — Green API WhatsApp backend
+// api/contact.php — API WhatsApp backend
 // Runs on Vercel via the vercel-community/php runtime (see vercel.json)
 //
 // Required Environment Variables (set in Vercel Dashboard → Settings → Environment Variables):
-//   GREENAPI_INSTANCE_ID   → your instance ID  (e.g. 7105xxxxxxx)
-//   GREENAPI_API_TOKEN     → your API token     (e.g. abcdef123456...)
-//   GREENAPI_WA_NUMBER     → 923097171127       (no + sign)
+//   API_INSTANCE_ID   → your instance ID  (e.g. 7105xxxxxxx)
+//   API_API_TOKEN     → your API token     (e.g. abcdef123456...)
+//   API_WA_NUMBER     → 923097171127       (no + sign)
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
@@ -51,13 +51,13 @@ if (!$name || !$email || !$message) {
 }
 
 // Read credentials from environment variables
-$instanceId = getenv('GREENAPI_INSTANCE_ID');
-$apiToken   = getenv('GREENAPI_API_TOKEN');
-$waNumber   = getenv('GREENAPI_WA_NUMBER') ?: '923097171127';
+$instanceId = getenv('API_INSTANCE_ID');
+$apiToken   = getenv('API_API_TOKEN');
+$waNumber   = getenv('API_WA_NUMBER') ?: '923097171127';
 
 if (!$instanceId || !$apiToken) {
     http_response_code(500);
-    echo json_encode(['success' => false, 'error' => 'Green API credentials not configured']);
+    echo json_encode(['success' => false, 'error' => 'API credentials not configured']);
     exit;
 }
 
