@@ -46,7 +46,7 @@ if (!$name || !$email || !$message) {
 // Read credentials from environment variables
 $instanceId = getenv('API_INSTANCE_ID');
 $apiToken   = getenv('API_API_TOKEN');
-$waNumber   = getenv('API_WA_NUMBER') ?: '923097171127';
+$waNumber   = getenv('API_WA_NUMBER');
 
 if (!$instanceId || !$apiToken) {
     http_response_code(500);
