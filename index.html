@@ -894,6 +894,16 @@
       font-weight: 500;
       margin-top: 12px;
     }
+    .form-error {
+      display: none;
+      padding: 14px 18px;
+      border-radius: 10px;
+      background: rgba(248,71,71,0.1);
+      border: 1px solid rgba(248,71,71,0.3);
+      color: #f87171;
+      font-weight: 500;
+      margin-top: 12px;
+    }
 
     /* ═══ FOOTER ═══ */
     footer {
@@ -1401,9 +1411,10 @@
             <textarea class="form-textarea" id="fmessage" placeholder="Tell me about your project..." required></textarea>
           </div>
           <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center;padding:14px;">
-            💬 Send Message via WhatsApp
+            💬 Send Message
           </button>
-          <div class="form-success" id="formSuccess">Opening WhatsApp... 🚀 Your message is ready!</div>
+          <div class="form-success" id="formSuccess">✅ Message sent! I'll reply within 1 hour.</div>
+          <div class="form-error" id="formError">❌ Failed to send. Please <a href="https://wa.me/923097171127" target="_blank" style="color:#f87171;text-decoration:underline;">message me directly on WhatsApp</a>.</div>
         </form>
       </div>
     </div>
@@ -1450,6 +1461,57 @@
     </div>
   </div>
 </footer>
+
+<!--
+═══════════════════════════════════════════════════════════
+VERCEL API ROUTE SETUP (Green API via environment variables)
+═══════════════════════════════════════════════════════════
+
+1. In your Vercel project dashboard → Settings → Environment Variables, add:
+   GREENAPI_INSTANCE_ID   = your instance ID from green-api.com
+   GREENAPI_API_TOKEN     = your API token from green-api.com
+   GREENAPI_WA_NUMBER     = 923097171127
+
+2. Create file: api/contact.js  (in your project root)
+   Paste the code below into that file.
+
+3. The form will POST JSON to /api/contact, which calls Green API.
+
+─── api/contact.js ────────────────────────────────────────
+export default async function handler(req, res) {
+  if (req.method !== 'POST') return res.status(405).end();
+
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Content-Type', 'application/json');
+
+  const { name, email, phone, service, budget, message } = req.body;
+
+  const instanceId = process.env.GREENAPI_INSTANCE_ID;
+  const apiToken   = process.env.GREENAPI_API_TOKEN;
+  const waNumber   = process.env.GREENAPI_WA_NUMBER || '923097171127';
+
+  const text = `*New Project Inquiry — saif_devs*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone || 'Not provided'}\n*Service:* ${service || 'Not specified'}\n*Budget:* ${budget || 'Not specified'}\n*Message:* ${message}`;
+
+  const url = `https://api.green-api.com/waInstance${instanceId}/sendMessage/${apiToken}`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chatId: `${waNumber}@c.us`, message: text })
+    });
+    const data = await response.json();
+    if (data.idMessage) {
+      return res.status(200).json({ success: true });
+    } else {
+      return res.status(500).json({ success: false, error: data });
+    }
+  } catch (err) {
+    return res.status(500).json({ success: false, error: err.message });
+  }
+}
+────────────────────────────────────────────────────────────
+-->
 
 <!-- ═══ JAVASCRIPT ═══ -->
 <script>
@@ -1565,38 +1627,38 @@
     const message = document.getElementById('fmessage').value.trim();
     const pageUrl = window.location.href;
 
-    // Show loading state
     const origText = submitBtn.innerHTML;
     submitBtn.innerHTML = '⏳ Sending...';
     submitBtn.disabled = true;
 
-    const success = document.getElementById('formSuccess');
+    const successEl = document.getElementById('formSuccess');
+    const errorEl   = document.getElementById('formError');
+    successEl.style.display = 'none';
+    errorEl.style.display   = 'none';
 
-    // Try API via PHP backend (Vercel PHP runtime)
     try {
-      const res = await fetch('/api/contact.php', {
+      const res  = await fetch('/api/contact.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, service, budget, message, pageUrl })
       });
       const data = await res.json();
-      if (data.success) {
-        success.textContent = '✅ Message sent! I\'ll reply within 1 hour.';
-        success.style.display = 'block';
-        e.target.reset();
-        setTimeout(() => { success.style.display = 'none'; }, 5000);
-        submitBtn.innerHTML = origText;
-        submitBtn.disabled = false;
-        return;
-      }
-    } catch (_) {}
 
-    // Fallback: open WhatsApp directly with page URL included
-    const msg = `*New Project Inquiry — saif_devs*\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone || 'Not provided'}\n*Service:* ${service || 'Not specified'}\n*Budget:* ${budget || 'Not specified'}\n*Message:* ${message}\n*Page:* ${pageUrl}`;
-    window.open(`https://wa.me/923097171127?text=${encodeURIComponent(msg)}`, '_blank');
-    success.textContent = 'Opening WhatsApp... 🚀';
-    success.style.display = 'block';
-    setTimeout(() => { success.style.display = 'none'; }, 4000);
+      if (data.success) {
+        successEl.style.display = 'block';
+        e.target.reset();
+        setTimeout(() => { successEl.style.display = 'none'; }, 6000);
+      } else {
+        console.error('[contact] API error:', data);
+        errorEl.style.display = 'block';
+        setTimeout(() => { errorEl.style.display = 'none'; }, 6000);
+      }
+    } catch (err) {
+      console.error('[contact] Fetch failed:', err);
+      errorEl.style.display = 'block';
+      setTimeout(() => { errorEl.style.display = 'none'; }, 6000);
+    }
+
     submitBtn.innerHTML = origText;
     submitBtn.disabled = false;
   }
